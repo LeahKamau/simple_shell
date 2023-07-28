@@ -46,11 +46,11 @@ int execute_cmd(char **args, char **drs)
 		}
 
 		_strcpy(full_path, drs[i]);
-		printf("what is in %s\n", drs[i]);
+		/*printf("what is in %s\n", drs[i]);*/
 		full_path = _strcat(full_path, "/");
 		full_path = _strcat(full_path, args[0]);
 
-		printf("Trying to execute: %s\n", full_path);
+		/*printf("Trying to execute: %s\n", full_path);*/
 
 		if (access(full_path, X_OK) == 0)
 		{
@@ -58,7 +58,7 @@ int execute_cmd(char **args, char **drs)
 
 			if (pid == 0)
 			{
-				printf("Child process is executing %s\n", full_path);
+				/*printf("Child process is executing %s\n", full_path);*/
 				if (execve(full_path, args, NULL) == -1)
 				{
 					perror("execve");
