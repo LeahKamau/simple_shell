@@ -15,8 +15,8 @@ char *line_getter(void)
 
 	if (chars_read == -1)
 	{
-		perror("getline error\n");
-		return (NULL);
+		write(1, "\n", 1);
+		exit(0);
 	}
 
 	if (command[chars_read - 1] == '\n')
