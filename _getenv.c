@@ -20,5 +20,5 @@ char *_getenv(const char *envname, char **envp)
 			break;
 		}
 	}
-	return(NULL);
+	return (NULL);
 }
