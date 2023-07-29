@@ -15,6 +15,9 @@ char *line_getter(void);
 char **_tokenizer(char *line);
 int _execute(char **args, char **dirs);
 char **extract_dirs(char **envp);
+char **_pathenv(char *path, char *denv);
+char **_setenv(char **envp);
+char *_getenv(const char *envname, char **envp);
 
 int run_fork(char **args, char **dirs);
 int execute_cmd(char **args, char **drs);

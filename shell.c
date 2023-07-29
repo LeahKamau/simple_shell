@@ -18,7 +18,7 @@ int main(int argc, char **argv, char **envp)
 	(void)argc;
 	(void)argv;
 
-	directories = extract_dirs(envp);
+	directories = _setenv(envp);
 	is_interactive = (isatty(STDIN_FILENO));
 
 	while (running)
