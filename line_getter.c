@@ -15,12 +15,15 @@ char *line_getter(void)
 
 	if (chars_read == -1)
 	{
-		write(1, "\n", 1);
-		exit(0);
+		free(command);
+		if (feof(stdin))
+			exit(EXIT_SUCCESS);
+		else
+		{
+			perror("getline error\n");
+			exit(EXIT_FAILURE);
+		}
 	}
-
-	if (command[chars_read - 1] == '\n')
-		command[chars_read - 1] = '\0';
 
 	return (command);
 }
